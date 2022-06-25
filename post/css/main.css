@@ -1,0 +1,24 @@
+.main_header {
+    font-size: 32px;
+    margin-top: 5rem;
+}
+
+.title_input_wrapper {
+    margin: 5rem 30rem 2rem 30rem;
+}
+
+.content_input {
+    height: 10rem;
+}
+
+.submit_btn {
+    width: 100px;
+}
+
+.cards_wrapper {
+    margin: 5rem 30rem;
+}
+
+.card {
+    margin: 0.5rem;
+}

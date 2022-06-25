@@ -31,7 +31,7 @@ async function sign_up() {
         return option.value;
     })
     try {
-        const result = await fetch(BASE_URL + '/user/sign_up', {
+        const result = await fetch(BASE_URL + '/user/create', {
             method: 'POST',
             mode: 'cors',
             headers: {
