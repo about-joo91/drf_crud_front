@@ -30,8 +30,10 @@ async function sign_up() {
     }).map(function (option) {
         return option.value;
     })
-    try {
-        const result = await fetch(BASE_URL + '/user/create', {
+    if (selected.length != 0 && userEmail &&
+        userPassword && userNickname &&
+        userFullname && userAddress) {
+        fetch(BASE_URL + '/user/create', {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -51,12 +53,15 @@ async function sign_up() {
                 }
 
             })
+        }).then(res => {
+            if (res.ok) {
+                location.replace('/user/sign_in.html')
+            }
+        }).catch(error => {
+            alert(error)
         })
-        if (result.ok) {
-            location.replace('/user/sign_in/')
-        }
+    } else {
+        alert("모든 값을 입력하셔야 합니다.")
     }
-    catch (err) {
-        console.log(err)
-    }
+
 }

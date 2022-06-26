@@ -4,7 +4,7 @@
 }
 
 .title_input_wrapper {
-    margin: 5rem 30rem 2rem 30rem;
+    margin: 5rem 20rem 2rem 20rem;
 }
 
 .content_input {
@@ -15,10 +15,54 @@
     width: 100px;
 }
 
-.cards_wrapper {
-    margin: 5rem 30rem;
+#cards_wrapper {
+    margin: 5rem 20rem;
 }
 
 .card {
     margin: 0.5rem;
+    padding: 0;
+}
+
+.profile_card_wrpper {
+
+    margin: 3rem 5rem 0 0;
+}
+
+#profile_card {
+    width: 35rem;
+    height: 15rem;
+}
+
+#profile_card_body {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile_card_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hobby_box {
+    display: flex;
+}
+
+.hobby_tag {
+    background-color: darkcyan;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding: 3px;
+    color: white;
+    font-size: 12px;
+}
+
+.profile_control_btn_box {
+    display: flex;
+}
+
+.profile_control_btn:hover {
+    cursor: pointer;
+    color: darkcyan;
 }

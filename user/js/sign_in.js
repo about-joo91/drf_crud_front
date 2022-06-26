@@ -18,25 +18,35 @@ const csrftoken = get_cookie('csrftoken')
 async function login() {
     const user_email = document.getElementById('email').value;
     const user_password = document.getElementById('password').value;
-    const result = await fetch(BASE_URL + '/user/control', {
-        method: "POST",
-        mode: 'cors',
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'X-CSRFToken': csrftoken,
-            'X-Requested-With': 'XMLHttpRequest'
-        },
-        body: JSON.stringify({
-            "username": user_email,
-            "password": user_password
-        }),
-    })
-    if (result.ok) {
-        location.replace('/post/main.html')
+    if (user_email && user_password) {
+        fetch(BASE_URL + '/user/login', {
+            method: "POST",
+            mode: 'cors',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken,
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify({
+                "email": user_email,
+                "password": user_password
+            }),
+        }).then(res => res.json())
+            .then(data => {
+                for (const key in data) {
+                    localStorage.setItem(key, data[key])
+                }
+                location.replace('/post/main.html')
+            })
+            .catch(error => {
+                alert(error)
+            })
+    } else {
+        alert("아이디와 패스워드를 입력해주세요")
     }
-    else {
-        alert(result.body)
-    }
+
+
 }
+

@@ -12,36 +12,27 @@
 </head>
 
 <body>
+    <div class="row justify-content-md-end profile_card_wrpper">
+        <div class="card" id="profile_card">
+
+        </div>
+    </div>
     <div class="row justify-content-md-center">
         <div class="col-lg-1 main_header">포스팅</div>
     </div>
     <div class="row title_input_wrapper">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="포스팅 제목" aria-describedby="button-addon2">
+            <input type="text" class="form-control" id="post_title" placeholder="포스팅 제목"
+                aria-describedby="button-addon2">
         </div>
         <div class="input-group-lg">
-            <textarea class="form-control content_input" placeholder="포스팅 내용"></textarea>
+            <textarea class="form-control content_input" id="post_content" placeholder="포스팅 내용"></textarea>
         </div>
     </div>
     <div class="row justify-content-md-center">
-        <button type="button" class="btn btn-dark submit_btn">Dark</button>
+        <button type="button" class="btn btn-dark submit_btn" onclick="post_upload()">작성하기</button>
     </div>
-    <div class="row justify-content-center cards_wrapper">
-        <div class="card">
-            <div class="card-body">
-                This is some text within a card body.
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                This is some text within a card body.
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                This is some text within a card body.
-            </div>
-        </div>
+    <div class="row justify-content-center" id="cards_wrapper">
 
     </div>
 
